@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class StringCalculatorComponent {
 
+  add(numbers: string): number {
+    if (numbers === "") {
+      return 0;
+    }
+    return 0;
+  }
+
 }
