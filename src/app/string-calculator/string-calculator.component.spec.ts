@@ -24,4 +24,12 @@ describe('StringCalculatorComponent', () => {
   it('should return 0 for an empty string', () => {
     expect(component.add("")).toEqual(0);
   });
+
+  it('should return 1 for the input "1"', () => {
+    expect(component.add("1")).toEqual(1);
+  });
+  
+  it('should return 6 for the input "1,5"', () => {
+    expect(component.add("1,5")).toEqual(6);
+  });
 });
