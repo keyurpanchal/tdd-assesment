@@ -20,4 +20,8 @@ describe('StringCalculatorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return 0 for an empty string', () => {
+    expect(component.add("")).toEqual(0);
+  });
 });
