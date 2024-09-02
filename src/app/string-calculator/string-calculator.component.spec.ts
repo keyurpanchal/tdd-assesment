@@ -41,4 +41,7 @@ describe('StringCalculatorComponent', () => {
     expect(component.add("1\n2,3")).toEqual(6);
   });
   
+  it('should return 3 for the input "//;\n1;2"'), () => {
+    expect(component.add("//;\n1;2")).toEqual(3);
+  }
 });
