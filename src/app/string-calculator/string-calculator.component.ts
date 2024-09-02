@@ -13,7 +13,9 @@ export class StringCalculatorComponent {
     if (numbers === "") {
       return 0;
     }
-    const numberArray = numbers.split(',').map( num => Number(num));
+
+    const delimetersRegex = /,|\n/; 
+    const numberArray = numbers.split(delimetersRegex).map( num => Number(num));
     return numberArray.reduce((sum,current) => sum + current, 0);
   }
 
