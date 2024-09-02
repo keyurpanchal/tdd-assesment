@@ -36,5 +36,9 @@ describe('StringCalculatorComponent', () => {
   it('should return 6 for the input "1,2,3"', () => {
     expect(component.add("1,2,3")).toEqual(6);
   });
+
+  it('should return 6 for the input "1\\n2,3"', () => {
+    expect(component.add("1\n2,3")).toEqual(6);
+  });
   
 });
