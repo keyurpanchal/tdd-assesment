@@ -14,9 +14,25 @@ export class StringCalculatorComponent {
       return 0;
     }
 
-    const delimetersRegex = /,|\n/; 
+    let delimetersRegex = /,|\n/; 
+
+    if (numbers.startsWith('//')) {
+      const delimiterEndIndex = numbers.indexOf('\n');
+      console.log(delimiterEndIndex);      
+      const customDelimiter = numbers.substring(2, delimiterEndIndex);
+      console.log(customDelimiter);      
+      delimetersRegex = new RegExp(customDelimiter);
+      console.log(delimetersRegex);       
+      numbers = numbers.substring(delimiterEndIndex + 1);
+      console.log(numbers);
+    }
+
     const numberArray = numbers.split(delimetersRegex).map( num => Number(num));
     return numberArray.reduce((sum,current) => sum + current, 0);
+  }
+
+  ngOnInit(){
+    this.add("//;\n1;2");
   }
 
 }
