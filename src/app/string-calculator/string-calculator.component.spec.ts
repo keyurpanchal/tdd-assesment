@@ -44,4 +44,12 @@ describe('StringCalculatorComponent', () => {
   it('should return 3 for the input "//;\n1;2"'), () => {
     expect(component.add("//;\n1;2")).toEqual(3);
   }
+
+  it('should throw error for the input "-1"'), () => {
+    expect(component.add("-1")).toThrowError('Negative numbers not allowed: -1');
+  }
+
+  it('should throw error for the input "-1,3,-66"'), () => {
+    expect(component.add("-1,3,-66")).toThrowError('Negative numbers not allowed: -1,-66');
+  }
 });

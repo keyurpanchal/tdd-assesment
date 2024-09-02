@@ -28,11 +28,14 @@ export class StringCalculatorComponent {
     }
 
     const numberArray = numbers.split(delimetersRegex).map( num => Number(num));
+
+    const negatives = numberArray.filter(num => num < 0);
+
+    // Throw an exception if there are negative numbers
+    if (negatives.length > 0) {
+      throw new Error(`Negative numbers not allowed: ${negatives.join(', ')}`);
+    }  
+
     return numberArray.reduce((sum,current) => sum + current, 0);
   }
-
-  ngOnInit(){
-    this.add("//;\n1;2");
-  }
-
 }
