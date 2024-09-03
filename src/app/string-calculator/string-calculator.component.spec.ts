@@ -46,10 +46,10 @@ describe('StringCalculatorComponent', () => {
   }
 
   it('should throw error for the input "-1"'), () => {
-    expect(component.add("-1")).toThrowError('Negative numbers not allowed: -1');
+    expect(() => component.add("-1")).toThrowError('Negative numbers not allowed: -1');
   }
 
   it('should throw error for the input "-1,3,-66"'), () => {
-    expect(component.add("-1,3,-66")).toThrowError('Negative numbers not allowed: -1,-66');
+    expect(() => component.add("-1,3,-66")).toThrowError('Negative numbers not allowed: -1, -66');
   }
 });
